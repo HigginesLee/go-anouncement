@@ -8,4 +8,8 @@ import (
 func main() {
 	utils.DBInit()
 	service.DouDianAnounceMent()
+	service.XiaohongshuAnouncement()
+	service.KuaishouAnouncement()
+	service.JingDongAnouncement()
+	service.WeiMobAnouncement()
 }

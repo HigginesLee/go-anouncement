@@ -3,10 +3,15 @@ package utils
 import (
 	"database/sql"
 	"fmt"
-	"log"
+	"github.com/blinkbean/dingtalk"
+	"os"
 )
 
 var DB *sql.DB
+var DingCli *dingtalk.DingTalk
+
+var DingToken string
+var DingSecret string
 
 func DBInit() {
 	var err error
@@ -24,9 +29,11 @@ func DBInit() {
 		)
 	`
 	_, err = DB.Exec(createTableQuery)
-	if err != nil {
-		log.Fatal(err)
-	}
+	CheckErr(err)
+	// 初始化钉钉机器人
+	DingToken = os.Getenv("DingToken")
+	DingSecret = os.Getenv("DingSecret")
+	DingCli = dingtalk.InitDingTalkWithSecret(DingToken, DingSecret)
 }
 
 func CheckErr(err error) bool {

@@ -1,7 +1,6 @@
 package module
 
 import (
-	"fmt"
 	_ "github.com/mattn/go-sqlite3"
 	"go_announce/utils"
 )
@@ -17,13 +16,11 @@ func (a *AnounceModule) SaveAnouncement() error {
 	if utils.CheckErr(err) {
 		return err
 	}
-	fmt.Printf("total: %v, LastTime:%v, platform: %v\n", a.Total, a.LastTime, a.Platform)
 	result, err := stmt.Exec(a.Total, a.LastTime, a.Platform)
 	if utils.CheckErr(err) {
 		return err
 	}
 	affected, err := result.RowsAffected()
-	fmt.Printf("affected rows: %v\n", affected)
 	if affected == 0 {
 		stmt, err = utils.DB.Prepare("INSERT INTO anouncement_info(platform, total, lastTime) VALUES(?, ?, ?)")
 		_, err = stmt.Exec(a.Platform, a.Total, a.LastTime)

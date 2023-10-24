@@ -1,2 +1,4 @@
+github.com/blinkbean/dingtalk v0.0.0-20230927120905-796332ac4ba1 h1:G14RkaB3RRW099aQbfyHm4RFgNxGUOTeHSoN+CZy2YI=
+github.com/blinkbean/dingtalk v0.0.0-20230927120905-796332ac4ba1/go.mod h1:9BaLuGSBqY3vT5hstValh48DbsKO7vaHaJnG9pXwbto=
 github.com/mattn/go-sqlite3 v1.14.17 h1:mCRHCLDUBXgpKAqIKsaAaAsrAlbkeomtRFKXh2L6YIM=
 github.com/mattn/go-sqlite3 v1.14.17/go.mod h1:2eHXhiwb8IkHr+BDWZGa96P6+rkvnG63S2DGjv9HUNg=
